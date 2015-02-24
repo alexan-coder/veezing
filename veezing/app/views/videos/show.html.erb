@@ -1,0 +1,15 @@
+<h1><%=@video.title%></h1>
+	<p><%=@video.description%></p>
+	<iframe id="ytplayer" type="text/html" width="720" height="405"
+src="https://www.youtube.com/embed/<%=@video.url%>?cc_load_policy=1&modestbranding=1&color=white&theme=light"
+frameborder="0" allowfullscreen></iframe>
+
+<% if @video == Video.first %>
+	<%= link_to "next", @video.prev %>
+<% elsif @video == Video.last%>
+	<%= link_to "prev", @video.next %>
+<% else %>
+	<%= link_to "next", @video.prev %>
+	<%= link_to "prev", @video.next %>
+<% end %>
+
