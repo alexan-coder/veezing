@@ -15,6 +15,8 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     @video_last = Video.first
     @video_first = Video.last
+    @comment = Comment.new
+    @comments = @video.comments
   end
   
 

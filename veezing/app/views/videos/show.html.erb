@@ -13,3 +13,15 @@ frameborder="0" allowfullscreen></iframe>
 	<%= link_to "prev", @video.next %>
 <% end %>
 
+<%= form_for @comment do |f| %>
+<%= f.hidden_field :video_id, value: @video.id %>
+<%= f.label :comment %>
+<%= f.text_field :body %>
+
+<%end%>
+
+<% @comments.each do |comment| %>
+<p><%= comment.user.email %> <%= comment.body %> </p>
+<% end %>
+
+
