@@ -12,6 +12,9 @@ frameborder="0" allowfullscreen></iframe>
 	<%= link_to "next", @video.prev %>
 	<%= link_to "prev", @video.next %>
 <% end %>
+<form action = '/videos/<%= @video.id %>' method="post">
+<input type="submit" value="zing it!" />
+ </form>
 
 <%= form_for @comment do |f| %>
 <%= f.hidden_field :video_id, value: @video.id %>
