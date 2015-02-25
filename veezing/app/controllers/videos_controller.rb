@@ -18,6 +18,5 @@ class VideosController < ApplicationController
     @comment = Comment.new
     @comments = @video.comments
   end
-  
 
 end
