@@ -17,5 +17,5 @@ Video.create([
 
 ])
 
-Zing.create(user_id: 1, video_id: 2)
+# Zing.create(user_id: 1, video_id: 2)
 

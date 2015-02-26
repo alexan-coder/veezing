@@ -1,6 +1,6 @@
 <h1><%=@video.title%></h1>
 	<p><%=@video.description%></p>
-	<iframe id="ytplayer" type="text/html" width="720" height="405"
+	<iframe id="ytplayer" type="text/html" width="1024" height="576"
 src="https://www.youtube.com/embed/<%=@video.url%>?cc_load_policy=1&modestbranding=1&color=white&theme=light"
 frameborder="0" allowfullscreen></iframe>
 
@@ -12,9 +12,22 @@ frameborder="0" allowfullscreen></iframe>
 	<%= link_to "next", @video.prev %>
 	<%= link_to "prev", @video.next %>
 <% end %>
-<form action = '/videos/<%= @video.id %>' method="post">
-<input type="submit" value="zing it!" />
- </form>
+
+
+
+<%= form_for @zing do |f| %>
+<%= f.hidden_field :video_id, value: @video.id %>
+<%= f.submit "zing it!"%>
+<%end%>
+
+
+<%= link_to "my zings", zings_path, { class: "my-zings"}%>
+
+<h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
+
+
+
+
 
 <%= form_for @comment do |f| %>
 <%= f.hidden_field :video_id, value: @video.id %>

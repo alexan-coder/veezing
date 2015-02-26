@@ -1,11 +1,13 @@
 <% @zings.each do |zing| %>
-	<p><%= zing.user.email%></p>
+<% if zing.user_id == current_user.id %>
 
 	<h1><%= zing.video.title %></h1>
 		<p><%=zing.video.description%></p>
 	<iframe id="ytplayer" type="text/html" width="720" height="405"
 src="https://www.youtube.com/embed/<%=zing.video.url%>?cc_load_policy=1&modestbranding=1&color=white&theme=light"
 frameborder="0" allowfullscreen></iframe>
+<%end%>
+
 <%end%>
 
 	

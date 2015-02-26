@@ -17,6 +17,7 @@ class VideosController < ApplicationController
     @video_first = Video.last
     @comment = Comment.new
     @comments = @video.comments
+    @zing = Zing.new
   end
 
 end
