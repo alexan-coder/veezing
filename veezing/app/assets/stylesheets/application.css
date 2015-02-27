@@ -13,10 +13,209 @@
  *= require_tree .
  *= require_self
  */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
 
 body {
-	
-	  background-image: url("./subtle_grunge6.png");
-	  text-align: center;
-	  color: white;
+ font-family: "aller";
+ color: white;
+
+ background-color: #007a9e;
 }
+
+h1{
+	font-family: "aller-bold";
+	font-size: 2em;
+	padding-bottom: 0.5em;
+}
+
+p {
+	font-family: "aller-light";
+	font-size: 1em;
+	padding-bottom: 0.5em;
+}
+.wrapper {
+	max-width: 853px;
+	margin: auto;
+}
+
+nav {
+	overflow: hidden;
+}
+
+.logo {
+	float:left;
+	width: 200px;
+}
+
+nav ul  {
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+
+nav ul li  {
+	display: inline-block;
+}
+
+nav a  {
+	display: inline-block;
+	padding: 1em;
+	text-decoration: none;
+	background-color: #cddc38;
+	color: black;
+	text-decoration: none;
+	padding: 1em;
+	text-align: right;
+	margin-top: 32px;
+}
+
+.video-nav {
+	overflow: auto;
+}
+
+.logo {
+	background: none;
+	padding-left: 0;
+	padding-top: 0;
+	margin-top: 1%;
+}
+
+
+.left {
+	box-sizing: border-box;
+	/*width:40%;*/
+	float: left;
+	color: black;
+	text-decoration: none;
+	padding-top: 1em;
+	margin-right: 0;
+}
+
+.right {
+	box-sizing: border-box;
+/*	background-color: #cddc38;
+*/	/*width:40%;*/
+	float: right;
+
+	text-align: right;
+	color: black;
+	text-decoration: none;
+	padding-top: 1em;
+	margin-left: 0;
+
+}
+
+.center {
+	box-sizing: border-box;
+	width: 20%;
+	text-align: center;
+	color: black;
+	text-decoration: none;
+	
+
+	margin-right: 40%;
+	margin-left: 40%;
+
+}
+
+.zingit {
+	box-sizing: border-box;
+	background-color: #cddc38;
+	border-style: none;
+	width: 100%;
+	text-align: center;
+	color: black;
+	text-decoration: none;
+	padding: 1em;
+	font-size: 15px;
+
+	/*margin-top: 10%;*/
+}
+
+
+
+
+
+.right .next {
+	background-color: #cddc38;
+	color: black;
+	text-decoration: none;
+	padding: 1em;
+	text-align: right;
+}
+
+
+
+/*.center .zingit {
+	background-color: #cddc38;
+	color: black;
+	text-decoration: none;
+	padding: 1em;
+}*/
+
+.left .prev {
+	background-color: #cddc38;
+	color: black;
+	text-decoration: none;
+	padding: 1em;
+
+}
+
+.comments {
+	margin-top: 1em;
+	font-family: 
+}
+
+
+
+
+
+

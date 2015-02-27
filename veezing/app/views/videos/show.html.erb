@@ -1,43 +1,47 @@
 <h1><%=@video.title%></h1>
 	<p><%=@video.description%></p>
-	<iframe id="ytplayer" type="text/html" width="1024" height="576"
+	<iframe id="ytplayer" type="text/html" width="853" height="480"
 src="https://www.youtube.com/embed/<%=@video.url%>?cc_load_policy=1&modestbranding=1&color=white&theme=light"
 frameborder="0" allowfullscreen></iframe>
 
+<div class="video-nav">
 <% if @video == Video.first %>
-	<%= link_to "next", @video.prev %>
-<% elsif @video == Video.last%>
-	<%= link_to "prev", @video.next %>
+	<div class="right">
+		 <%= link_to "next >>", @video.prev, class: "next" %>
+	</div>
+	<% elsif @video == Video.last%>
+	<div class="left">
+		<%= link_to "<< prev", @video.next, class: "prev" %>
+	</div>
 <% else %>
-	<%= link_to "next", @video.prev %>
-	<%= link_to "prev", @video.next %>
+	<div class="left">
+		<%= link_to "<< prev", @video.next, class: "prev" %>
+	</div>	
+	<div class="right"> 
+		<%= link_to "next >>", @video.prev, class: "next" %>
+	</div>
 <% end %>
-
-
-
+<div class="center">
 <%= form_for @zing do |f| %>
 <%= f.hidden_field :video_id, value: @video.id %>
-<%= f.submit "zing it!"%>
+<%= f.submit "zing it!", class: "zingit" %>
 <%end%>
+</div>
+
+</div>
 
 
-<%= link_to "my zings", zings_path, { class: "my-zings"}%>
+<div class="comments">
+	<%= form_for @comment do |f| %>
+	<%= f.hidden_field :video_id, value: @video.id %>
+		
+	<%= f.label :comment %>
+	<%= f.text_field :body %>
 
-<h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
+	<%end%>
 
+	<% @comments.each do |comment| %>
+	<p><%= comment.user.email %> <%= comment.body %> </p>
+	<% end %>
 
-
-
-
-<%= form_for @comment do |f| %>
-<%= f.hidden_field :video_id, value: @video.id %>
-<%= f.label :comment %>
-<%= f.text_field :body %>
-
-<%end%>
-
-<% @comments.each do |comment| %>
-<p><%= comment.user.email %> <%= comment.body %> </p>
-<% end %>
-
-
+</div>
